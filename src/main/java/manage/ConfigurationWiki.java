@@ -2,9 +2,11 @@ package manage;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -22,7 +24,7 @@ public class ConfigurationWiki {
         capabilities.setCapability("appActivities", ".main.MainActivity");
 
         capabilities.setCapability("automationName", "Appium");
-        capabilities.setCapability("app","C:/Users/julia/Documents/QA/Mobile/wiki.apk");
+        capabilities.setCapability("app","C:/Users/pv297/Downloads/test/install/org.wikipedia.apk");
         driver = new AppiumDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
 
 
@@ -30,6 +32,6 @@ public class ConfigurationWiki {
 
     @AfterSuite
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
 }
