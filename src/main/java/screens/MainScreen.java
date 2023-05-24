@@ -27,6 +27,7 @@ public class MainScreen extends BaseScreen {
     }
 
     public ModalLoginScreen clickTheFlowButton() {
+        should(flowButton,40);
         flowButton.click();
         return new ModalLoginScreen(driver);
     }

@@ -14,6 +14,6 @@ public class Launch extends ConfigurationWiki {
     public void launch(){
         String detail = new MainScreen(driver)
                 .getDetail();
-        Assert.assertEquals(detail, "Featured article");
+       Assert.assertEquals(detail, "In the news");
     }
 }

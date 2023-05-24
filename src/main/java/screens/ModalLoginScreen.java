@@ -13,6 +13,9 @@ public class ModalLoginScreen extends BaseScreen {
     MobileElement loginButton;
     @FindBy (xpath = "//*[@resource-id='org.wikipedia:id/explore_overflow_log_out']")
     MobileElement logOutButton;
+    @FindBy(xpath = "//*[@resource-id='org.wikipedia:id/explore_overflow_account_name']")
+    MobileElement accountName;
+
 
     public LoginScreen cklickTheLoginButton() {
         loginButton.click();
@@ -21,5 +24,22 @@ public class ModalLoginScreen extends BaseScreen {
 
     public boolean isLogged() {
         return logOutButton.isDisplayed();
+    }
+
+    public String getInf() {
+        return accountName.getText();
+    }
+
+    public String getInfOut() {
+        return logOutButton.getText();
+    }
+    public MainScreen logOut(){
+        should(logOutButton,40);
+        logOutButton.click();
+        return new MainScreen(driver);
+    }
+
+    public String getIngLog() {
+        return accountName.getText();
     }
 }
